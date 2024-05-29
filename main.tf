@@ -77,8 +77,8 @@ resource "aws_security_group" "python_sg" {
   }
  # Car-prediction access from anywhere
  ingress {
-   from_port   = 8000
-   to_port     = 8000
+   from_port   = 7000
+   to_port     = 7000
    protocol    = "tcp"
    cidr_blocks = ["0.0.0.0/0"]
  }
