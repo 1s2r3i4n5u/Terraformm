@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-west-1"
-  access_key = "AKIA6GBMCENH4ZIELOOL"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 #vpc.tf
