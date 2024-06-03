@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "us-west-1"
+  region     = "ap-south-1"
   access_key = ""
   secret_key = ""
 }
@@ -17,7 +17,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.subnet_cidr
-  availability_zone = "us-west-1a"
+  availability_zone = "ap-south-1a"
   tags = {
     Name = "subnet1"
   }
@@ -107,10 +107,10 @@ variable "subnet_cidr" {
 
 # Creating EC2 instance
 resource "aws_instance" "wordpress_instance" {
-  ami                         = "ami-0f66240e199159416" # Amazon Linux 2 
+  ami                         = "ami-067aaeea6813afbde" # Amazon Linux 2 
   instance_type               = "t2.micro"
   count                       = 1
-  key_name                    = "90141147"
+  key_name                    = "123321"
   vpc_security_group_ids      = ["${aws_security_group.python_sg.id}"]
   subnet_id                   = aws_subnet.main.id
   associate_public_ip_address = true
